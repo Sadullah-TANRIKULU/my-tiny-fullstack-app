@@ -11,6 +11,12 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
+// Get all records
+app.get('/entries', async (req, res) => {
+  const result = await pool.query('SELECT * FROM entries ORDER BY id');
+  res.json(result.rows);
+});
+
 // Create new record
 app.post('/create', async (req, res) => {
   const { content } = req.body;

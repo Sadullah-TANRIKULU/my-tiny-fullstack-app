@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./assets/catty.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/catty.png" type="image/x-icon" />
     <title>My Tiny Fullstack App</title>
     <style>
       body {
@@ -24,6 +24,14 @@
         padding: 10px 15px;
         margin: 5px;
       }
+      #output {
+        width: 100%; /* or a fixed width if needed */
+        text-align: justify; /* justify the text */
+        white-space: pre-wrap; /* preserves line breaks from DB text */
+        word-wrap: break-word; /* ensures long words won’t overflow */
+        font-family: sans-serif; /* optional, for clean appearance */
+        padding: 1rem; /* optional spacing */
+      }
     </style>
   </head>
   <body>
@@ -33,7 +41,8 @@
     <button onclick="remove()">Delete Last</button>
     <button onclick="getEntries()">Get DB Data</button>
 
-    <pre id="output"></pre> <!-- place to show db content -->
+    <div id="output"></div>
+    <!-- place to show db content -->
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

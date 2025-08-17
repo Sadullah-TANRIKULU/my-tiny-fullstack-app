@@ -38,7 +38,7 @@ async function remove() {
 async function getEntries() {
   const res = await fetch(API_URL + "/entries");
   const data = await res.json();
-  const output = document.getElementById("output");
+  const output = document.getElementById("output-inner");
   output.innerHTML = ""; // clear previous data
   // If your data is an array of objects
   data.forEach((entry) => {
